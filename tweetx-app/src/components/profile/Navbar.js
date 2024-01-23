@@ -1,5 +1,5 @@
 import React from "react";
-
+import { NavLink } from "react-router-dom";
 function Navbar() {
   return (
     <div>
@@ -42,30 +42,54 @@ function Navbar() {
             id="navbar-default"
           >
             <ul class="font-medium text-xl flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              {/* block py-2 px-3 text-white bg-pink-700 rounded md:bg-transparent md:text-pink-500 md:p-0 dark:text-white md:dark:text-pink-500 */}
               <li>
-                <a
-                  href="#"
-                  class="block py-2 px-3 text-white bg-pink-700 rounded md:bg-transparent md:text-pink-500 md:p-0 dark:text-white md:dark:text-pink-500"
-                  aria-current="page"
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    `block py-2 pr-4 pl-3 duration-200
+                                        ${
+                                          isActive
+                                            ? "text-pink-500"
+                                            : "text-gray-600"
+                                        }
+                                        border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                  }
                 >
                   Feed
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#"
-                  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-pink-500 md:p-0 dark:text-white md:dark:hover:text-pink-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                <NavLink
+                  to="/users"
+                  className={({ isActive }) =>
+                    `block py-2 pr-4 pl-3 duration-200
+                                        ${
+                                          isActive
+                                            ? "text-orange-700"
+                                            : "text-gray-700"
+                                        }
+                                        border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                  }
                 >
                   Users
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#"
-                  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-pink-500 md:p-0 dark:text-white md:dark:hover:text-pink-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                <NavLink
+                  to="/profile"
+                  className={({ isActive }) =>
+                    `block py-2 pr-4 pl-3 duration-200
+                                        ${
+                                          isActive
+                                            ? "text-orange-700"
+                                            : "text-gray-700"
+                                        }
+                                        border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                  }
                 >
                   Profile
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
